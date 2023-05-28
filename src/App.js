@@ -1,36 +1,26 @@
-import "./App.css";
-
-const Button = ({ children, backgroundColor }) => {
-  return <button style={{ backgroundColor }}>{children}</button>;
-};
-
-const Alert = ({ children }) => {
+import * as React from 'react'
+import './App.css'
+ 
+const Row=({children})=>{
   return (
-    <>
-      <div className="Overlay" />
-      <div className="Alert">{children}</div>
-    </>
-  );
-};
-
-const DeleteButton = () => {
-  return <Button backgroundColor="red">Delete</Button>;
-};
-
-function App() {
-  return (
-    <div className="App">
-      <header>Little Lemon Restaurant</header>
-      <Alert>
-        <h4>Delete Account</h4>
-        <p>
-          Are you sure you want to proceed? You will miss All your delicious
-          recipes!
-        </p>
-        <DeleteButton />
-      </Alert>
-    </div>
-  );
+    <div className='Row' >
+      {children}
+      </div>
+  )
 }
 
-export default App;
+function LiveOrders(){
+  return (
+    <div className='App'>
+      <Row spacing={32}>
+        <p>Pizza Margarita</p>
+        <p>2</p>
+        <p>30$</p>
+        <p>18:45</p>
+        <p>Jill</p>
+      </Row>
+    </div>
+  )
+}
+
+export default LiveOrders
